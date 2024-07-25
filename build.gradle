@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.gml'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation(fileTree('libs/linear-math-vanilla-3.1.0-rc.jar'))
+    implementation(fileTree('libs/linear-math-annotaion-1.0.0.jar'))
+
+    implementation 'org.jetbrains:annotations:24.0.0'
+}
+
+test {
+    useJUnitPlatform()
+}
